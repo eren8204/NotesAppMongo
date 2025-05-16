@@ -17,6 +17,9 @@ app.use((req,res,next)=>{
 });
 app.use("/user", userRouter);
 app.use("/note", noteRouter);
+app.get("/", (req, res) => {
+    res.send("Welcome to the Note Taking App");
+});
 mongoose.connect(authUrl)
     .then(() => {
         console.log("Connected to MongoDB");
